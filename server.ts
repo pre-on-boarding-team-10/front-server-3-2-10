@@ -14,11 +14,13 @@ const rules = auth.rewriter({
 })
 
 let corsOption = {
-  origin: 'http://localhost:3000',
+  origin:
+    process.env.NODE_ENV === 'production' ? 'https://pre-onboarding-7th-3-2-10.vercel.app' : 'http://localhost:3000',
   credentials: true,
 }
 
 app.use(cors(corsOption))
+
 app.use(rules)
 app.use(auth)
 app.use(router)
