@@ -14,8 +14,7 @@ const rules = auth.rewriter({
 })
 
 let corsOption = {
-  origin:
-    process.env.NODE_ENV === 'production' ? 'https://pre-onboarding-7th-3-2-10.vercel.app' : 'http://localhost:3000',
+  origin: 'https://pre-onboarding-7th-3-2-10.vercel.app',
   credentials: true,
 }
 
